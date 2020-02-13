@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_184851) do
+ActiveRecord::Schema.define(version: 2020_02_13_202818) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 2020_02_13_184851) do
     t.integer "locations_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "librarians_id"
-    t.index ["librarians_id"], name: "index_libraries_on_librarians_id"
     t.index ["locations_id"], name: "index_libraries_on_locations_id"
     t.index ["parkings_id"], name: "index_libraries_on_parkings_id"
   end
@@ -65,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_02_13_184851) do
   end
 
   add_foreign_key "librarians", "libraries"
-  add_foreign_key "libraries", "librarians", column: "librarians_id"
   add_foreign_key "libraries", "locations", column: "locations_id"
   add_foreign_key "libraries", "parkings", column: "parkings_id"
 end
