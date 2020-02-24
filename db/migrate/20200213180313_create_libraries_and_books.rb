@@ -6,8 +6,8 @@ class CreateLibrariesAndBooks < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean :wifi
       t.boolean :accessability
-      t.references :parkings, null: false, foreign_key: true
-      t.references :locations, null: false, foreign_key: true
+    #  t.references :parkings, null: false, foreign_key: true
+      t.references :location, null: false, foreign_key: true
       t.timestamps
     end
 
