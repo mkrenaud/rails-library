@@ -1,2 +1,13 @@
-<h1>Libraries#show</h1>
-<p>Find me in app/views/libraries/show.html.erb</p>
+<h3><%= @libraries.name %></h3>
+<p>There library is located at  <%= link_to @libraries.location.address, @libraries.location %>.</p>
+<p>There are <%= @libraries.books.count %> books in this library.</p>
+
+<% @libraries.books.each do |book| %>
+  <ul><%= link_to book.title, book %> </ul>
+<% end %>
+
+<p>There are <%= @libraries.librarians.count %> librarians who work here.</p>
+
+<% @libraries.librarians.each do |librarian| %>
+  <ul><%= link_to librarian.name, librarian %> </ul>
+<% end %>

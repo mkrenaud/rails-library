@@ -1,2 +1,4 @@
-<h1>Librarians#show</h1>
-<p>Find me in app/views/librarians/show.html.erb</p>
+<h3>Librarian Profile</h3>
+<p>Name: <%= @librarians.name %></p>
+<p>Age: <%= @librarians.age %></p>
+<p>Library: <%= link_to @librarians.library.name, @librarians.library %></p>

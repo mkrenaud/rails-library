@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class Book < ApplicationRecord
-  has_and_belongs_to_many :libraries
+  has_many :libraries_books
+  has_many :libraries, through: :libraries_books
 end
