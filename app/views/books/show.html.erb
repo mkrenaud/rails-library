@@ -1,7 +1,11 @@
 <h3><%= @books.title %></h3>
-
+<h5><%= @books.author %></h5>
+<% if @books.libraries.empty? %>
+<p>There are no libraries with this book :(</p>
+<% else %>
 <p>This book is in these libraries:</p>
 
 <% @books.libraries.each do |library| %>
   <ul><%= link_to library.name, library %> </ul>
+<% end %>
 <% end %>
