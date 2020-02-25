@@ -1,3 +1,17 @@
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+
 <h3><%= @locations.address %></h3>
 
 <p>The library at this location is <%= link_to @locations.library.name, @locations.library %>.</p>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibWtyZW5hdWQiLCJhIjoiY2s2MHU3NXN2MGJ4bTNqcGs4MWZyejN4dyJ9.P1503rPR03lDpziXHVQt6Q';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    center: [10,10],
+    zoom: 15,
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+</script>
