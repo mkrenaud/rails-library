@@ -5,4 +5,5 @@ class Library < ApplicationRecord
   has_many :books, through: :libraries_books
   has_many :librarians
   belongs_to :location
+  validates :name, :wifi, presence: true
 end
