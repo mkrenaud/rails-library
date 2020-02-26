@@ -1,5 +1,6 @@
 <h3><%= @books.title %></h3>
 <h5><%= @books.author %></h5>
+<h6>Genre: <%= @books.genre %></h6>
 <% if @books.libraries.empty? %>
 <p>There are no libraries with this book :(</p>
 <% else %>
