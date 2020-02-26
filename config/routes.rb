@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   root 'home#index'
+  get 'about', to: 'about#index'
   get 'libraries', to: 'libraries#index'
   get 'libraries/:id', to: 'libraries#show', as: 'library'
   get 'books', to: 'books#index'
